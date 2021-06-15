@@ -20,7 +20,9 @@ db.session.add(user_1_order)
 db.session.commit()
 
 order_content = Order_Contents(product_id=1, order_id=user_1_order.order_id)
+db.session.add(order_content)
 
+order_content = Order_Contents(product_id=2, order_id=user_1_order.order_id)
 db.session.add(order_content)
 
 db.session.commit()
