@@ -27,3 +27,9 @@ db.session.add(order_content)
 
 db.session.commit()
 
+products_within_order_1 = order_content.query.filter_by(order_id=1).all()
+
+for order in products_within_order_1:
+    print(order.product_id)
+
+
