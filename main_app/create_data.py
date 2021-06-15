@@ -10,6 +10,7 @@ product_2 = Products(name="Conditioner", price=2)
 
 db.session.add(user_1)
 db.session.add(product_1)
+db.session.add(product_2)
 
 db.session.commit()
 
@@ -31,5 +32,10 @@ products_within_order_1 = order_content.query.filter_by(order_id=1).all()
 
 for order in products_within_order_1:
     print(order.product_id)
+
+products = Products.query.all()
+
+for item in products:
+    print(item.name)
 
 
